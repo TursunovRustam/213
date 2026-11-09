@@ -1,0 +1,32 @@
+.ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  color: var(--saffron-400);
+  opacity: 0.75;
+}
+
+.line {
+  flex: 1;
+  max-width: 260px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, currentColor);
+}
+
+.lineEnd {
+  background: linear-gradient(to left, transparent, currentColor);
+}
+
+.motif {
+  flex: none;
+  width: 120px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.2;
+}
+
+.motif circle {
+  fill: currentColor;
+}

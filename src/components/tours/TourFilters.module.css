@@ -1,0 +1,252 @@
+.filters {
+  display: grid;
+  gap: 28px;
+}
+
+.group {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+
+.legend {
+  margin-bottom: 12px;
+  padding: 0;
+  font-weight: 700;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  position: relative;
+  cursor: pointer;
+}
+
+.chip input {
+  position: absolute;
+  opacity: 0;
+  inset: 0;
+  cursor: pointer;
+}
+
+.chip span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 0 14px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--color-border-strong);
+  background: var(--color-surface);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  transition: background-color var(--dur-fast), border-color var(--dur-fast), color var(--dur-fast);
+}
+
+.chip:hover span {
+  border-color: var(--ink-600);
+}
+
+.chip input:checked + span {
+  background: var(--lapis-900);
+  border-color: var(--lapis-900);
+  color: var(--sand-50);
+}
+
+.chip input:focus-visible + span {
+  outline: 3px solid var(--turquoise-500);
+  outline-offset: 2px;
+}
+
+.count {
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  opacity: 0.75;
+}
+
+/* ---------- Цена ---------- */
+
+.priceValues {
+  margin-bottom: 14px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.range {
+  position: relative;
+  height: 28px;
+}
+
+.range::before,
+.range::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  height: 4px;
+  border-radius: 4px;
+  transform: translateY(-50%);
+}
+
+.range::before {
+  left: 0;
+  right: 0;
+  background: var(--sand-300);
+}
+
+.range::after {
+  left: var(--low);
+  right: calc(100% - var(--high));
+  background: var(--clay-600);
+}
+
+.range input {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  margin: 0;
+  background: none;
+  pointer-events: none;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.range input::-webkit-slider-runnable-track {
+  height: 28px;
+  background: none;
+}
+
+.range input::-moz-range-track {
+  background: none;
+}
+
+.range input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 26px;
+  height: 26px;
+  margin-top: 1px;
+  border-radius: 50%;
+  border: 3px solid var(--clay-600);
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+  cursor: grab;
+  pointer-events: auto;
+}
+
+.range input::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 3px solid var(--clay-600);
+  background: var(--white);
+  cursor: grab;
+  pointer-events: auto;
+}
+
+.range input:focus-visible::-webkit-slider-thumb {
+  outline: 3px solid var(--turquoise-500);
+  outline-offset: 2px;
+}
+
+.rangeLabels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Переключатель «только с трансфером» ---------- */
+
+.switch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.switch input {
+  position: absolute;
+  opacity: 0;
+  width: 48px;
+  height: 28px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.track {
+  position: relative;
+  flex: none;
+  width: 48px;
+  height: 28px;
+  border-radius: 99px;
+  background: var(--sand-300);
+  transition: background-color var(--dur-fast);
+}
+
+.track::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--white);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: transform var(--dur) var(--ease-out);
+}
+
+.switch input:checked + .track {
+  background: var(--turquoise-700);
+}
+
+.switch input:checked + .track::after {
+  transform: translateX(20px);
+}
+
+.switch input:focus-visible + .track {
+  outline: 3px solid var(--turquoise-500);
+  outline-offset: 2px;
+}
+
+.note {
+  font-size: var(--fs-sm);
+  color: var(--ink-700);
+}
+
+.linkButton {
+  font-weight: 700;
+  color: var(--color-link);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.reset {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  justify-self: start;
+  min-height: 44px;
+  font-weight: 700;
+  color: var(--clay-700);
+}
+
+.reset svg {
+  width: 18px;
+  height: 18px;
+}
+
+.reset:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}

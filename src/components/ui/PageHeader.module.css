@@ -1,0 +1,51 @@
+.header {
+  padding-block: clamp(32px, 5vw, 64px) clamp(28px, 4vw, 48px);
+  background-image: var(--pattern-girih-clay);
+  background-size: 64px 64px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  margin: 0 0 16px;
+  padding: 0;
+  list-style: none;
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
+
+.crumbs li {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.crumbs a {
+  color: var(--ink-700);
+  text-decoration: none;
+}
+
+.crumbs a:hover {
+  color: var(--clay-700);
+  text-decoration: underline;
+}
+
+.crumbs svg {
+  width: 14px;
+  height: 14px;
+}
+
+.title {
+  max-width: 22ch;
+  font-size: clamp(2.2rem, 1.5rem + 3vw, 4rem);
+}
+
+.lead {
+  margin-top: 14px;
+  max-width: 60ch;
+  font-size: var(--fs-lg);
+  color: var(--color-text-muted);
+}

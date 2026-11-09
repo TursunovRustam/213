@@ -1,0 +1,138 @@
+.header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 50;
+  height: var(--header-h);
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.transparent {
+  color: var(--sand-50);
+  background: linear-gradient(to bottom, rgba(13, 34, 56, 0.55), rgba(13, 34, 56, 0));
+}
+
+.solid {
+  color: var(--ink-900);
+  background: rgba(251, 246, 238, 0.97);
+  box-shadow:
+    0 1px 0 var(--color-border),
+    0 10px 24px -18px rgba(31, 26, 23, 0.35);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  height: 100%;
+}
+
+.nav {
+  display: none;
+}
+
+.navList {
+  display: flex;
+  gap: 28px;
+}
+
+.navLink {
+  position: relative;
+  padding: 8px 0;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 2px;
+  height: 1.5px;
+  background: var(--saffron-400);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--dur) var(--ease-out);
+}
+
+.navLink:hover::after,
+.active::after {
+  transform: scaleX(1);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+}
+
+.lang {
+  display: none;
+}
+
+.iconButton {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: inherit;
+  transition: background-color var(--dur-fast);
+}
+.iconButton:hover {
+  background: color-mix(in srgb, currentColor 12%, transparent);
+}
+.iconButton svg {
+  width: 22px;
+  height: 22px;
+}
+
+.count {
+  position: absolute;
+  top: 4px;
+  right: 2px;
+  min-width: 19px;
+  height: 19px;
+  padding: 0 5px;
+  border-radius: 99px;
+  background: var(--clay-600);
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 19px;
+  text-align: center;
+}
+
+.cta {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .lang {
+    display: inline-flex;
+    margin-right: 6px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .nav {
+    display: block;
+    margin-inline: auto;
+  }
+  .actions {
+    margin-left: 0;
+  }
+  .cta {
+    display: inline-flex;
+    margin-left: 8px;
+  }
+  .burger {
+    display: none;
+  }
+}

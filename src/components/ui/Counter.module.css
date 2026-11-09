@@ -1,0 +1,56 @@
+.counter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.text {
+  display: grid;
+}
+
+.label {
+  font-weight: 700;
+}
+
+.hint {
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.button {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-border-strong);
+  color: var(--ink-900);
+  transition: border-color var(--dur-fast), background-color var(--dur-fast);
+}
+.button:hover:not(:disabled) {
+  border-color: var(--clay-600);
+  background: rgba(181, 86, 43, 0.08);
+}
+.button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+.button svg {
+  width: 18px;
+  height: 18px;
+}
+
+.value {
+  min-width: 2.2ch;
+  text-align: center;
+  font-weight: 700;
+  font-size: var(--fs-lg);
+  font-variant-numeric: tabular-nums;
+}

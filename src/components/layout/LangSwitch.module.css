@@ -1,0 +1,33 @@
+.switch {
+  display: inline-flex;
+  padding: 3px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid currentColor;
+  border-color: color-mix(in srgb, currentColor 35%, transparent);
+}
+
+.option {
+  min-width: 42px;
+  min-height: 38px;
+  padding: 0 10px;
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  transition: background-color var(--dur-fast), color var(--dur-fast);
+}
+
+.option:hover:not(.active) {
+  background: color-mix(in srgb, currentColor 12%, transparent);
+}
+
+.active {
+  background: var(--clay-600);
+  color: var(--white);
+}
+
+.lg .option {
+  min-width: 56px;
+  min-height: 44px;
+  font-size: var(--fs-sm);
+}

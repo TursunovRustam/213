@@ -1,0 +1,32 @@
+.grid {
+  display: grid;
+  gap: 36px;
+}
+
+.intro {
+  display: grid;
+  gap: 18px;
+  justify-items: start;
+  align-content: start;
+}
+
+.title {
+  font-size: var(--fs-h2);
+}
+
+.lead {
+  max-width: 40ch;
+  font-size: var(--fs-lg);
+  color: var(--color-text-muted);
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: 5fr 7fr;
+    gap: 96px;
+  }
+  .intro {
+    position: sticky;
+    top: calc(var(--header-h) + 40px);
+  }
+}

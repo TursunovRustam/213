@@ -1,0 +1,121 @@
+/* =====================================================================
+   ДИЗАЙН-ТОКЕНЫ
+   Вся палитра, шрифты, радиусы и отступы сайта живут здесь.
+   Поменяли значение тут — оно поменяется на всех страницах.
+   Брейкпоинты (используются в CSS-модулях): 640px / 1024px / 1280px.
+   ===================================================================== */
+
+:root {
+  /* --- Песок: фоны --- */
+  --sand-50: #fbf6ee; /* основной фон сайта */
+  --sand-100: #f5ecdd;
+  --sand-200: #eadcc4;
+  --sand-300: #dcc7a6;
+
+  /* --- Терракота: главные кнопки и акценты --- */
+  --clay-500: #c8673a;
+  --clay-600: #b5562b;
+  --clay-700: #96441f;
+
+  /* --- Бирюза куполов: ссылки и бейджи --- */
+  --turquoise-100: #dcefec;
+  --turquoise-500: #1f8a8a;
+  --turquoise-700: #146b6b; /* для текста на светлом фоне (контраст AA) */
+
+  /* --- Лазурит: тёмные секции и футер --- */
+  --lapis-700: #1d4166;
+  --lapis-900: #14304d;
+  --lapis-950: #0d2238;
+
+  /* --- Шафран: золото, звёзды, орнамент --- */
+  --saffron-300: #e8c27a;
+  --saffron-400: #d9a441;
+  --saffron-600: #b7832a; /* звёзды на светлом фоне */
+
+  /* --- Текст --- */
+  --ink-900: #1f1a17;
+  --ink-700: #4a403a;
+  --ink-600: #5e534b;
+  --white: #ffffff;
+
+  --success: #2f7d4f;
+  --danger: #b3261e;
+
+  /* --- Смысловые цвета (ссылаются на палитру выше) --- */
+  --color-bg: var(--sand-50);
+  --color-surface: #fffdf9;
+  --color-text: var(--ink-900);
+  --color-text-muted: var(--ink-600);
+  --color-accent: var(--clay-600);
+  --color-accent-hover: var(--clay-700);
+  --color-link: var(--turquoise-700);
+  --color-border: rgba(31, 26, 23, 0.12);
+  --color-border-strong: rgba(31, 26, 23, 0.22);
+  --color-dark: var(--lapis-900);
+  --color-on-dark: var(--sand-50);
+  --color-on-dark-muted: rgba(251, 246, 238, 0.78);
+  --color-star: var(--saffron-600);
+
+  /* --- Шрифты --- */
+  /* Fraunces не содержит кириллицы, поэтому русские заголовки набираются Lora */
+  --font-display: 'Fraunces', 'Lora', Georgia, 'Times New Roman', serif;
+  --font-body: 'Manrope', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  --fs-xs: 0.8125rem;
+  --fs-sm: 0.9375rem;
+  --fs-base: 1.0625rem;
+  --fs-lg: 1.1875rem;
+  --fs-xl: 1.375rem;
+  --fs-h3: clamp(1.3rem, 1.12rem + 0.8vw, 1.7rem);
+  --fs-h2: clamp(2rem, 1.35rem + 2.6vw, 3.5rem);
+  --fs-h1: clamp(2.75rem, 1.4rem + 5.6vw, 6rem);
+
+  --lh-body: 1.6;
+  --lh-tight: 1.08;
+
+  /* --- Отступы --- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --section-y: clamp(72px, 9vw, 128px);
+
+  --container: 1240px;
+  --gutter: clamp(20px, 4vw, 40px);
+  --header-h: 72px;
+
+  /* --- Радиусы --- */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 36px;
+  --radius-pill: 999px;
+
+  /* --- Тени (тёплые, с мягким размытием) --- */
+  --shadow-sm: 0 1px 2px rgba(31, 26, 23, 0.06), 0 4px 12px -4px rgba(31, 26, 23, 0.08);
+  --shadow-md: 0 14px 30px -14px rgba(31, 26, 23, 0.25), 0 2px 6px rgba(31, 26, 23, 0.05);
+  --shadow-lg: 0 30px 60px -24px rgba(20, 48, 77, 0.4);
+
+  /* --- Движение --- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 0.2s;
+  --dur: 0.45s;
+  --dur-slow: 0.8s;
+
+  /* --- Узоры (SVG). Цвет линий задан внутри: stroke='%23...' --- */
+  /* Гирих: золотые линии для тёмного фона */
+  --pattern-girih-gold: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath d='M16 16h28v28H16zM30 10l20 20-20 20-20-20zM30 0v10M60 30H50M30 60V50M0 30h10M0 0l16 16M60 0L44 16M60 60L44 44M0 60l16-16' fill='none' stroke='%23D9A441' stroke-opacity='.16'/%3E%3C/svg%3E");
+  /* Гирих: светлые линии поверх цветных заглушек фото */
+  --pattern-girih-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath d='M16 16h28v28H16zM30 10l20 20-20 20-20-20zM30 0v10M60 30H50M30 60V50M0 30h10M0 0l16 16M60 0L44 16M60 60L44 44M0 60l16-16' fill='none' stroke='%23FBF6EE' stroke-opacity='.13'/%3E%3C/svg%3E");
+  /* Гирих: терракотовые линии на светлом фоне */
+  --pattern-girih-clay: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath d='M16 16h28v28H16zM30 10l20 20-20 20-20-20zM30 0v10M60 30H50M30 60V50M0 30h10M0 0l16 16M60 0L44 16M60 60L44 44M0 60l16-16' fill='none' stroke='%23B5562B' stroke-opacity='.1'/%3E%3C/svg%3E");
+  /* Икат: полоса в футере */
+  --pattern-ikat: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='28' viewBox='0 0 56 28'%3E%3Cfilter id='b'%3E%3CfeGaussianBlur stdDeviation='.7'/%3E%3C/filter%3E%3Cg filter='url(%23b)'%3E%3Cpath d='M14 1l13 13-13 13L1 14z' fill='%23B5562B'/%3E%3Cpath d='M14 7l7 7-7 7-7-7z' fill='%23D9A441'/%3E%3Cpath d='M42 1l13 13-13 13-13-13z' fill='%231F8A8A'/%3E%3Cpath d='M42 8l6 6-6 6-6-6z' fill='%23FBF6EE'/%3E%3C/g%3E%3C/svg%3E");
+  /* Зерно: тонкая тёплая текстура фона */
+  --texture-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .35 0 0 0 0 .24 0 0 0 0 .16 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}

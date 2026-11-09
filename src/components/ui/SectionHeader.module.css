@@ -1,0 +1,42 @@
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px 40px;
+  margin-bottom: clamp(28px, 4vw, 48px);
+}
+
+.text {
+  max-width: 720px;
+}
+
+.title {
+  font-size: var(--fs-h2);
+}
+
+.lead {
+  margin-top: 16px;
+  font-size: var(--fs-lg);
+  color: var(--color-text-muted);
+  max-width: 60ch;
+}
+
+.center {
+  justify-content: center;
+  text-align: center;
+}
+.center .text {
+  margin-inline: auto;
+}
+.center .lead {
+  margin-inline: auto;
+}
+
+.onDark .lead {
+  color: var(--color-on-dark-muted);
+}
+
+.action {
+  flex: none;
+}

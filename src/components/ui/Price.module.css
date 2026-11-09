@@ -1,0 +1,54 @@
+.price {
+  display: inline-grid;
+  gap: 2px;
+  line-height: 1.15;
+  font-variant-numeric: tabular-nums;
+}
+
+.top,
+.bottom {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.4em;
+}
+
+.from {
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
+
+.old {
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+  text-decoration-color: var(--clay-600);
+  text-decoration-thickness: 1.5px;
+}
+
+.amount {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--ink-900);
+  letter-spacing: -0.01em;
+}
+
+.sale {
+  color: var(--clay-700);
+}
+
+.per {
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
+
+.sm .amount {
+  font-size: 1.35rem;
+}
+
+.md .amount {
+  font-size: 1.75rem;
+}
+
+.lg .amount {
+  font-size: clamp(2rem, 1.6rem + 1vw, 2.4rem);
+}

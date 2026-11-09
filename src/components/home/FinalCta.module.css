@@ -1,0 +1,62 @@
+.section {
+  padding-block: 0 var(--section-y);
+}
+
+.card {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: 20px;
+  padding: clamp(56px, 8vw, 104px) clamp(24px, 6vw, 80px);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  text-align: center;
+  color: var(--sand-50);
+  background-image:
+    var(--pattern-girih-light),
+    radial-gradient(120% 120% at 50% 110%, #e8c27a 0%, #c8673a 35%, #96441f 60%, #14304d 100%);
+  background-size: 64px 64px, cover;
+  isolation: isolate;
+}
+
+/* Контур арки на фоне */
+.arch {
+  position: absolute;
+  left: 50%;
+  top: 28px;
+  z-index: -1;
+  width: min(70%, 520px);
+  height: calc(100% - 26px);
+  transform: translateX(-50%);
+  fill: none;
+  stroke: rgba(232, 194, 122, 0.45);
+  stroke-width: 1.2;
+  vector-effect: non-scaling-stroke;
+}
+
+.title {
+  max-width: 18ch;
+  font-size: var(--fs-h2);
+}
+
+.text {
+  max-width: 48ch;
+  font-size: var(--fs-lg);
+  color: rgba(251, 246, 238, 0.9);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.link {
+  color: var(--sand-50);
+}
+
+.link:hover {
+  background: rgba(251, 246, 238, 0.12);
+}

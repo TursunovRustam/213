@@ -1,0 +1,99 @@
+.list {
+  display: grid;
+  gap: 16px;
+}
+
+@media (min-width: 640px) {
+  .list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  height: 100%;
+  margin: 0;
+  padding: 24px;
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+
+.text {
+  margin: 0;
+  color: var(--ink-700);
+}
+
+.clamp p {
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.author {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--sand-200);
+  color: var(--clay-700);
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.meta {
+  display: grid;
+  gap: 2px;
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
+
+.meta strong {
+  color: var(--ink-900);
+  font-size: var(--fs-base);
+}
+
+.tour {
+  margin-top: 2px;
+  color: var(--color-link);
+  font-weight: 600;
+  text-decoration: none;
+}
+.tour:hover {
+  text-decoration: underline;
+}
+
+/* Вариант для тёмной секции */
+.onDark {
+  background: rgba(251, 246, 238, 0.06);
+  border-color: rgba(217, 164, 65, 0.25);
+}
+.onDark .text {
+  color: var(--sand-50);
+}
+.onDark .meta {
+  color: var(--color-on-dark-muted);
+}
+.onDark .meta strong {
+  color: var(--sand-50);
+}
+.onDark .avatar {
+  background: rgba(217, 164, 65, 0.18);
+  color: var(--saffron-300);
+}
+.onDark .tour {
+  color: var(--saffron-300);
+}

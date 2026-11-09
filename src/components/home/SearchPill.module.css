@@ -1,0 +1,115 @@
+/* Телефон: карточка с полями друг под другом. От 1024px: горизонтальная «таблетка» */
+.pill {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  width: 100%;
+  max-width: 880px;
+  padding: 8px;
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  color: var(--ink-900);
+  box-shadow: var(--shadow-lg);
+}
+
+.field {
+  position: relative;
+  display: grid;
+  gap: 2px;
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  transition: background-color var(--dur-fast);
+}
+
+.field:first-child {
+  grid-column: 1 / -1;
+  border-bottom: 1px solid var(--color-border);
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+
+.field:nth-child(2) {
+  border-right: 1px solid var(--color-border);
+}
+
+.field:hover {
+  background: var(--sand-100);
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--clay-700);
+}
+
+.label svg {
+  width: 15px;
+  height: 15px;
+}
+
+.control {
+  width: 100%;
+  min-height: 34px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-size: var(--fs-base);
+  font-weight: 600;
+  color: var(--ink-900);
+  appearance: none;
+  cursor: pointer;
+}
+
+.control:focus-visible {
+  outline: none;
+}
+
+.field:focus-within {
+  background: var(--sand-100);
+  box-shadow: inset 0 0 0 2px var(--turquoise-500);
+}
+
+.submit {
+  grid-column: 1 / -1;
+  margin-top: 8px;
+}
+
+@media (min-width: 1024px) {
+  .pill {
+    grid-template-columns: 1.3fr 1fr 1fr auto;
+    align-items: center;
+    padding: 8px 8px 8px 12px;
+    border-radius: var(--radius-pill);
+  }
+  .field {
+    border-radius: var(--radius-pill);
+    padding: 8px 22px;
+  }
+  .field:first-child {
+    grid-column: auto;
+    border-bottom: 0;
+    border-radius: var(--radius-pill);
+  }
+  .field:not(:nth-child(3))::after {
+    content: '';
+    position: absolute;
+    top: 14px;
+    bottom: 14px;
+    right: 0;
+    width: 1px;
+    background: var(--color-border);
+  }
+  .field:nth-child(2) {
+    border-right: 0;
+  }
+  .submit {
+    grid-column: auto;
+    margin-top: 0;
+    min-height: 60px;
+    padding-inline: 32px;
+  }
+}

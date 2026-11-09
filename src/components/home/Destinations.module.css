@@ -1,0 +1,88 @@
+.section {
+  background: var(--sand-100);
+}
+
+/* Телефон: свайп-лента. От 1024px: все арки в один ряд */
+.list {
+  display: flex;
+  gap: 18px;
+  padding: 8px var(--gutter) 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: var(--gutter);
+  scrollbar-width: none;
+}
+.list::-webkit-scrollbar {
+  display: none;
+}
+
+.list > li {
+  flex: 0 0 min(62vw, 260px);
+  scroll-snap-align: start;
+}
+
+@media (min-width: 1024px) {
+  .list {
+    display: grid;
+    grid-template-columns: repeat(var(--count), minmax(0, 1fr));
+    gap: 24px;
+    max-width: calc(var(--container) + var(--gutter) * 2);
+    margin-inline: auto;
+    overflow: visible;
+  }
+}
+
+.card {
+  display: grid;
+  gap: 16px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.arch {
+  transition: transform var(--dur) var(--ease-out);
+}
+
+.image {
+  transition: transform 1s var(--ease-out);
+}
+
+.card:hover .arch {
+  transform: translateY(-6px);
+}
+
+.card:hover .image {
+  transform: scale(1.06);
+}
+
+.text {
+  display: grid;
+  gap: 4px;
+  justify-items: center;
+  text-align: center;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  line-height: 1.15;
+}
+
+.count {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--turquoise-700);
+}
+
+.count svg {
+  width: 16px;
+  height: 16px;
+  transition: transform var(--dur-fast);
+}
+
+.card:hover .count svg {
+  transform: translate(2px, -2px);
+}

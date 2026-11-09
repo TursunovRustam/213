@@ -1,0 +1,67 @@
+.hero {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: max(100svh, 680px);
+  padding: calc(var(--header-h) + 40px) 0 120px;
+  color: var(--sand-50);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.background {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+
+/* Затемнение, чтобы текст читался на любом фото */
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(180deg, rgba(13, 34, 56, 0.55) 0%, rgba(13, 34, 56, 0.1) 38%, rgba(13, 34, 56, 0.25) 62%, rgba(13, 34, 56, 0.78) 100%);
+}
+
+.content {
+  display: grid;
+  gap: 22px;
+  justify-items: start;
+}
+
+.title {
+  max-width: 13ch;
+  font-size: var(--fs-h1);
+  font-weight: 500;
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  text-shadow: 0 2px 30px rgba(13, 34, 56, 0.35);
+}
+
+.word {
+  display: inline-block;
+}
+
+.accent {
+  font-style: italic;
+  color: var(--saffron-300);
+}
+
+.subtitle {
+  max-width: 46ch;
+  font-size: clamp(1.05rem, 0.95rem + 0.5vw, 1.35rem);
+  font-weight: 500;
+  color: rgba(251, 246, 238, 0.92);
+}
+
+.search {
+  width: 100%;
+  margin-top: 14px;
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    padding-bottom: 140px;
+  }
+}

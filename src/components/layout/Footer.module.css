@@ -1,0 +1,119 @@
+.footer {
+  position: relative;
+  color: var(--sand-50);
+  background-color: var(--lapis-950);
+  background-image: var(--pattern-girih-gold);
+  background-size: 64px 64px;
+}
+
+/* Полоса икат по верху футера */
+.ikat {
+  height: 22px;
+  background-color: var(--lapis-900);
+  background-image: var(--pattern-ikat);
+  background-size: 44px 22px;
+  border-bottom: 1px solid rgba(217, 164, 65, 0.4);
+}
+
+.grid {
+  display: grid;
+  gap: 40px;
+  padding-block: clamp(48px, 7vw, 88px);
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: 1.4fr 1fr 1fr 1.3fr;
+    gap: 48px;
+  }
+}
+
+.brand {
+  display: grid;
+  gap: 18px;
+  align-content: start;
+}
+
+.about {
+  max-width: 36ch;
+  color: var(--color-on-dark-muted);
+}
+
+.socials {
+  display: flex;
+  gap: 10px;
+}
+
+.social {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(251, 246, 238, 0.3);
+  transition: background-color var(--dur-fast), border-color var(--dur-fast);
+}
+.social:hover {
+  background: rgba(251, 246, 238, 0.1);
+  border-color: var(--saffron-400);
+}
+.social svg {
+  width: 20px;
+  height: 20px;
+}
+
+.heading {
+  margin-bottom: 16px;
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--saffron-300);
+}
+
+.list {
+  display: grid;
+  gap: 10px;
+}
+
+.list a {
+  text-decoration: none;
+  color: var(--color-on-dark-muted);
+  transition: color var(--dur-fast);
+}
+.list a:hover {
+  color: var(--sand-50);
+  text-decoration: underline;
+}
+
+.contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-on-dark-muted);
+  word-break: break-word;
+}
+.contact svg {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  color: var(--saffron-400);
+}
+
+.bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 24px;
+  padding-block: 22px;
+  border-top: 1px solid rgba(251, 246, 238, 0.14);
+  font-size: var(--fs-sm);
+  color: var(--color-on-dark-muted);
+}

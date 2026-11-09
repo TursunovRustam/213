@@ -1,0 +1,99 @@
+.menu {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  overflow-y: auto;
+  padding-bottom: 32px;
+  color: var(--sand-50);
+  background-color: var(--lapis-900);
+  background-image: var(--pattern-girih-gold);
+  background-size: 64px 64px;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-h);
+}
+
+.close {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-right: -8px;
+  border-radius: 50%;
+}
+.close:hover {
+  background: rgba(251, 246, 238, 0.12);
+}
+.close svg {
+  width: 26px;
+  height: 26px;
+}
+
+.links {
+  display: grid;
+  gap: 4px;
+  margin-top: clamp(16px, 5vh, 48px);
+}
+
+.link {
+  display: inline-block;
+  padding: 6px 0;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 1.4rem + 3vw, 2.8rem);
+  line-height: 1.15;
+  text-decoration: none;
+}
+.link:hover {
+  color: var(--saffron-300);
+}
+
+.linkSmall {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 6px 0;
+  font-weight: 600;
+  color: var(--color-on-dark-muted);
+}
+
+.bottom {
+  display: grid;
+  gap: 20px;
+  justify-items: start;
+  margin-top: 36px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(217, 164, 65, 0.3);
+}
+
+.contacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 16px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid rgba(251, 246, 238, 0.35);
+  font-weight: 600;
+  text-decoration: none;
+}
+.contact svg {
+  width: 20px;
+  height: 20px;
+}
+.contact:hover {
+  background: rgba(251, 246, 238, 0.1);
+}
+
+.phone {
+  color: var(--color-on-dark-muted);
+  font-variant-numeric: tabular-nums;
+}

@@ -1,0 +1,170 @@
+.intro {
+  display: grid;
+  gap: 48px;
+  align-items: center;
+  padding-block: clamp(40px, 6vw, 88px);
+}
+
+.portrait {
+  width: min(100%, 400px);
+  margin-inline: auto;
+  padding: 14px 14px 0 0;
+}
+
+.introText {
+  display: grid;
+  gap: 22px;
+}
+
+.title {
+  font-size: clamp(2.6rem, 1.6rem + 4vw, 5rem);
+}
+
+.lead {
+  max-width: 50ch;
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 1.05rem + 0.8vw, 1.6rem);
+  line-height: 1.4;
+  color: var(--ink-700);
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px 28px;
+  margin-top: 8px;
+  padding-top: 24px;
+  border-top: 1px solid var(--color-border);
+}
+
+.facts li {
+  display: flex;
+  gap: 12px;
+}
+
+.facts svg {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  color: var(--turquoise-700);
+}
+
+.facts strong {
+  display: block;
+}
+
+.facts span span {
+  display: block;
+  font-size: var(--fs-sm);
+  color: var(--ink-700);
+}
+
+@media (min-width: 1024px) {
+  .intro {
+    grid-template-columns: 5fr 7fr;
+    gap: 96px;
+  }
+  .portrait {
+    width: 100%;
+    max-width: 460px;
+  }
+}
+
+/* ---------- История ---------- */
+
+.story {
+  display: grid;
+  gap: 28px;
+  padding-block: clamp(48px, 7vw, 96px);
+}
+
+.storyTitle {
+  font-size: var(--fs-h2);
+}
+
+.storyText {
+  display: grid;
+  gap: 1.1em;
+  max-width: 66ch;
+  font-size: var(--fs-lg);
+  color: var(--ink-700);
+}
+
+.quote {
+  margin: 0.6em 0;
+  padding: 0 0 0 24px;
+  border-left: 1px solid var(--saffron-400);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.35rem, 1.1rem + 1vw, 1.8rem);
+  line-height: 1.35;
+  color: var(--clay-700);
+}
+
+@media (min-width: 1024px) {
+  .story {
+    grid-template-columns: 5fr 7fr;
+    gap: 96px;
+  }
+}
+
+/* ---------- Галерея ---------- */
+
+.gallerySection {
+  background: var(--sand-100);
+}
+
+.galleryTitle {
+  margin-bottom: 32px;
+  font-size: var(--fs-h2);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.photoImage {
+  aspect-ratio: 1;
+  border-radius: var(--radius-md);
+}
+
+@media (min-width: 1024px) {
+  .gallery {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+  .photo:nth-child(1) .photoImage,
+  .photo:nth-child(5) .photoImage {
+    aspect-ratio: 4 / 5;
+  }
+}
+
+/* ---------- Призыв ---------- */
+
+.cta {
+  display: grid;
+  justify-items: center;
+  gap: 18px;
+  text-align: center;
+}
+
+.ctaTitle {
+  max-width: 20ch;
+  font-size: var(--fs-h2);
+}
+
+.ctaText {
+  max-width: 48ch;
+  font-size: var(--fs-lg);
+  color: var(--color-text-muted);
+}
+
+.ctaActions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 8px;
+}

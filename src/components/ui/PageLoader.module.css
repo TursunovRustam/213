@@ -1,0 +1,25 @@
+.loader {
+  display: grid;
+  place-items: center;
+  min-height: 60svh;
+}
+
+.mark {
+  width: 44px;
+  height: 52px;
+  fill: none;
+  stroke: var(--saffron-400);
+  stroke-width: 2.4;
+  stroke-dasharray: 140;
+  animation: draw 1.4s ease-in-out infinite;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dashoffset: 140;
+  }
+  60%,
+  100% {
+    stroke-dashoffset: 0;
+  }
+}

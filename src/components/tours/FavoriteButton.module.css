@@ -1,0 +1,48 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background-color var(--dur-fast), color var(--dur-fast), border-color var(--dur-fast);
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+}
+
+.icon svg {
+  width: 20px;
+  height: 20px;
+  transition: fill var(--dur-fast), stroke var(--dur-fast);
+}
+
+.overlay {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(251, 246, 238, 0.94);
+  color: var(--ink-900);
+  box-shadow: 0 6px 16px -8px rgba(31, 26, 23, 0.5);
+}
+.overlay:hover {
+  background: var(--white);
+  color: var(--clay-600);
+}
+
+.inline {
+  min-height: 44px;
+  padding: 0 16px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--color-border-strong);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+}
+.inline:hover {
+  border-color: var(--clay-600);
+}
+
+.active .icon svg {
+  fill: var(--clay-600);
+  stroke: var(--clay-600);
+}

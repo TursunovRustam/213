@@ -1,0 +1,68 @@
+.timeline {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.step {
+  position: relative;
+  padding: 0 0 28px 40px;
+}
+
+/* Линия между точками */
+.step::before {
+  content: '';
+  position: absolute;
+  top: 18px;
+  bottom: -4px;
+  left: 9px;
+  width: 2px;
+  background: linear-gradient(var(--saffron-400), var(--sand-300));
+}
+
+.step:last-child {
+  padding-bottom: 0;
+}
+
+.step:last-child::before {
+  display: none;
+}
+
+.marker {
+  position: absolute;
+  top: 4px;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--saffron-400);
+  background: var(--sand-50);
+}
+
+.marker::after {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border-radius: 50%;
+  background: var(--clay-600);
+}
+
+.when {
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--clay-700);
+  font-variant-numeric: tabular-nums;
+}
+
+.title {
+  margin-top: 2px;
+  font-size: 1.25rem;
+}
+
+.text {
+  margin-top: 6px;
+  max-width: 62ch;
+  color: var(--ink-700);
+}

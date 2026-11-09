@@ -1,0 +1,94 @@
+.wrap {
+  position: relative;
+  overflow: hidden;
+  background: var(--sand-200);
+  isolation: isolate;
+}
+
+.img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.7s var(--ease-out);
+}
+
+.visible {
+  opacity: 1;
+}
+
+/* ---------- Заглушка, пока нет фото ---------- */
+
+.fallback {
+  --sun-color: rgba(255, 228, 178, 0.55);
+  --scene-color: rgba(13, 34, 56, 0.62);
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  color: var(--sand-50);
+  background-image: var(--pattern-girih-light), var(--tone);
+  background-size: 60px 60px, cover;
+}
+
+.fallback[data-tone='dusk'] {
+  --tone: linear-gradient(172deg, #1d4166 0%, #6e4a5a 42%, #c8673a 78%, #e8c27a 100%);
+}
+
+.fallback[data-tone='tile'] {
+  --tone: linear-gradient(165deg, #1f8a8a 0%, #146b6b 45%, #14304d 100%);
+  --sun-color: rgba(232, 194, 122, 0.5);
+}
+
+.fallback[data-tone='clay'] {
+  --tone: linear-gradient(170deg, #96441f 0%, #c8673a 50%, #e8c27a 100%);
+  --scene-color: rgba(70, 32, 14, 0.55);
+}
+
+.fallback[data-tone='night'] {
+  --tone: radial-gradient(120% 90% at 75% 15%, #1d4166 0%, #14304d 45%, #0d2238 100%);
+  --sun-color: rgba(251, 246, 238, 0.7);
+  --scene-color: rgba(5, 16, 28, 0.7);
+}
+
+.fallback[data-tone='sand'] {
+  --tone: linear-gradient(175deg, #f5ecdd 0%, #eadcc4 45%, #dcc7a6 100%);
+  --sun-color: rgba(200, 103, 58, 0.45);
+  --scene-color: rgba(150, 68, 31, 0.5);
+  background-image: var(--pattern-girih-clay), var(--tone);
+  color: var(--ink-900);
+}
+
+.scene {
+  position: absolute;
+  inset: auto 0 0 0;
+  width: 100%;
+  height: 64%;
+  fill: var(--scene-color);
+}
+
+.back {
+  opacity: 0.5;
+}
+
+.sun {
+  fill: var(--sun-color);
+}
+
+.label {
+  position: relative;
+  z-index: 1;
+  max-width: 85%;
+  margin: 0 0 14px 16px;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(0.95rem, 0.85rem + 0.5vw, 1.2rem);
+  line-height: 1.2;
+  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.35);
+}
+
+.fallback[data-tone='sand'] .label {
+  text-shadow: none;
+}
